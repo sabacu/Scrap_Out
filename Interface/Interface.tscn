@@ -1,0 +1,1087 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://Interface/Interface.gd" type="Script" id=1]
+[ext_resource path="res://Interface/left_panel_1.png" type="Texture" id=2]
+[ext_resource path="res://Interface/left_panel_3.png" type="Texture" id=3]
+[ext_resource path="res://Interface/left_panel_4.png" type="Texture" id=4]
+[ext_resource path="res://Interface/left_panel_2.png" type="Texture" id=5]
+[ext_resource path="res://Interface/support.png" type="Texture" id=6]
+[ext_resource path="res://Interface/Menu_Pane_brilhol.png" type="Texture" id=7]
+[ext_resource path="res://Interface/Menu_Panel.png" type="Texture" id=8]
+[ext_resource path="res://Interface/label_themee.tres" type="Theme" id=9]
+[ext_resource path="res://Interface/buttom_minus_up.png" type="Texture" id=10]
+[ext_resource path="res://Interface/buttom_plus_up.png" type="Texture" id=11]
+[ext_resource path="res://Interface/panel_screen_label.png" type="Texture" id=12]
+[ext_resource path="res://sounds/placehold_sounds/Plus_Point.wav" type="AudioStream" id=13]
+[ext_resource path="res://sounds/placehold_sounds/Energy_change.wav" type="AudioStream" id=14]
+[ext_resource path="res://sounds/placehold_sounds/Minus_Point.wav" type="AudioStream" id=15]
+[ext_resource path="res://sounds/placehold_sounds/Error.wav" type="AudioStream" id=16]
+[ext_resource path="res://Interface/head_icon.png" type="Texture" id=17]
+[ext_resource path="res://Interface/shield_icon.png" type="Texture" id=18]
+[ext_resource path="res://Interface/energy_icon.png" type="Texture" id=19]
+[ext_resource path="res://Interface/buttom_upgrade1.png" type="Texture" id=20]
+[ext_resource path="res://sounds/placehold_sounds/upgrade.wav" type="AudioStream" id=21]
+[ext_resource path="res://Interface/upgrades_label.png" type="Texture" id=22]
+[ext_resource path="res://Interface/scrap_panel.png" type="Texture" id=23]
+[ext_resource path="res://Interface/menu_buttom.png" type="Texture" id=24]
+[ext_resource path="res://Interface/restart_buttom.png" type="Texture" id=25]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Interface/Robot Crush.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = SubResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "bullet_energy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/Bullet_Panel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/Energy_Panel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "head_energy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/Head_Panel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "scrap_gain"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scrap_panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBoxContainer/Shield_Panel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://Interface/Robot Crush.otf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 29
+font_data = SubResource( 8 )
+
+[sub_resource type="DynamicFontData" id=10]
+font_path = "res://Interface/Robot Crush.otf"
+
+[sub_resource type="DynamicFont" id=11]
+font_data = SubResource( 10 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 25 )
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 24 )
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="Animation" id=12]
+length = 1.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel_on:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.25, 0.4, 0.55, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel_on:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Interface" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="HUX" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 15.0
+margin_bottom = 15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HUX"]
+position = Vector2( -16.0638, 45.5569 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUX"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -196.0
+margin_right = 64.0
+margin_bottom = 196.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Energy_Panel" type="TextureRect" parent="HUX/VBoxContainer"]
+margin_right = 64.0
+margin_bottom = 96.0
+texture = ExtResource( 2 )
+
+[node name="energy" type="Label" parent="HUX/VBoxContainer/Energy_Panel"]
+anchor_left = 0.5
+anchor_top = 0.344
+anchor_right = 0.5
+anchor_bottom = 0.344
+margin_left = -20.0
+margin_top = -0.0240021
+margin_right = 20.0
+margin_bottom = 21.976
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 2 )
+text = "99"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="max_energy" type="Label" parent="HUX/VBoxContainer/Energy_Panel"]
+anchor_left = 0.5
+anchor_top = 0.768
+anchor_right = 0.5
+anchor_bottom = 0.768
+margin_left = -20.0
+margin_top = -21.998
+margin_right = 20.0
+margin_bottom = 0.00201416
+custom_fonts/font = SubResource( 2 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HUX/VBoxContainer/Energy_Panel"]
+position = Vector2( 31.514, 28.2437 )
+texture = ExtResource( 19 )
+
+[node name="Head_Panel" type="TextureRect" parent="HUX/VBoxContainer"]
+margin_top = 100.0
+margin_right = 64.0
+margin_bottom = 196.0
+texture = ExtResource( 5 )
+
+[node name="energy" type="Label" parent="HUX/VBoxContainer/Head_Panel"]
+anchor_left = 0.5
+anchor_top = 0.344
+anchor_right = 0.5
+anchor_bottom = 0.344
+margin_left = -29.0102
+margin_top = 1.09012
+margin_right = 11.9898
+margin_bottom = 31.0901
+rect_pivot_offset = Vector2( 34.6814, 19.201 )
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 2 )
+text = "99"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="max_energy" type="Label" parent="HUX/VBoxContainer/Head_Panel"]
+anchor_left = 0.5
+anchor_top = 0.768
+anchor_right = 0.5
+anchor_bottom = 0.768
+margin_left = -29.0102
+margin_top = -20.8839
+margin_right = 10.9898
+margin_bottom = 1.11613
+rect_pivot_offset = Vector2( 34.6814, 0.471024 )
+custom_fonts/font = SubResource( 2 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HUX/VBoxContainer/Head_Panel"]
+position = Vector2( 22.0003, 30.3248 )
+texture = ExtResource( 17 )
+
+[node name="Bullet_Panel" type="TextureRect" parent="HUX/VBoxContainer"]
+margin_top = 200.0
+margin_right = 64.0
+margin_bottom = 296.0
+texture = ExtResource( 3 )
+
+[node name="energy" type="Label" parent="HUX/VBoxContainer/Bullet_Panel"]
+anchor_left = 0.5
+anchor_top = 0.344
+anchor_right = 0.5
+anchor_bottom = 0.344
+margin_left = -14.3269
+margin_top = -4.13625
+margin_right = 26.6731
+margin_bottom = 25.8638
+rect_pivot_offset = Vector2( 34.6814, 19.201 )
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 2 )
+text = "99"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="max_energy" type="Label" parent="HUX/VBoxContainer/Bullet_Panel"]
+anchor_left = 0.5
+anchor_top = 0.768
+anchor_right = 0.5
+anchor_bottom = 0.768
+margin_left = -14.3269
+margin_top = -26.1102
+margin_right = 25.6731
+margin_bottom = -4.11023
+rect_pivot_offset = Vector2( 34.6814, 0.471024 )
+custom_fonts/font = SubResource( 2 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shield_Panel" type="TextureRect" parent="HUX/VBoxContainer"]
+margin_top = 300.0
+margin_right = 64.0
+margin_bottom = 396.0
+texture = ExtResource( 4 )
+
+[node name="energy" type="Label" parent="HUX/VBoxContainer/Shield_Panel"]
+anchor_left = 0.5
+anchor_top = 0.344
+anchor_right = 0.5
+anchor_bottom = 0.344
+margin_left = -11.652
+margin_top = 8.79125
+margin_right = 29.348
+margin_bottom = 38.7913
+rect_pivot_offset = Vector2( 34.6814, 19.201 )
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 2 )
+text = "99"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HUX/VBoxContainer/Shield_Panel"]
+position = Vector2( 20.271, 57.661 )
+texture = ExtResource( 18 )
+
+[node name="anim" type="AnimationPlayer" parent="HUX"]
+anims/bullet_energy = SubResource( 3 )
+anims/energy_changed = SubResource( 4 )
+anims/head_energy = SubResource( 5 )
+anims/scrap_gain = SubResource( 6 )
+anims/shield_animation = SubResource( 7 )
+
+[node name="Scrap_panel" type="Sprite" parent="HUX"]
+position = Vector2( 510.488, 29.7444 )
+rotation = 1.5708
+texture = ExtResource( 23 )
+
+[node name="scrap_label" type="Label" parent="HUX/Scrap_panel"]
+anchor_left = 0.5
+anchor_top = 0.402
+anchor_right = 0.502
+anchor_bottom = 0.402
+margin_left = -45.9555
+margin_top = -27.9887
+margin_right = -6.08352
+margin_bottom = -5.98867
+rect_rotation = -89.4788
+custom_fonts/font = SubResource( 2 )
+text = "10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.133333, 0.12549, 0.203922, 0.666667 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TextureRect" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.353546
+margin_bottom = 0.353516
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel_on" type="TextureRect" parent="Pause"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0.133333 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="energy" type="VBoxContainer" parent="Pause/Panel_on"]
+show_behind_parent = true
+anchor_left = 0.246
+anchor_top = 0.265
+anchor_right = 0.439
+anchor_bottom = 0.749
+margin_left = 0.095993
+margin_top = 0.485825
+margin_right = 0.463989
+margin_bottom = 0.0858459
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="head_rocket2" type="Label" parent="Pause/Panel_on/energy"]
+margin_right = 198.0
+margin_bottom = 30.0
+theme = ExtResource( 9 )
+text = "ENERGY"
+align = 1
+
+[node name="total_energy" type="TextureRect" parent="Pause/Panel_on/energy"]
+margin_top = 34.0
+margin_right = 198.0
+margin_bottom = 66.0
+texture = ExtResource( 12 )
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Pause/Panel_on/energy/total_energy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 9 )
+text = "999"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="head_rocket" type="Label" parent="Pause/Panel_on/energy"]
+margin_top = 70.0
+margin_right = 198.0
+margin_bottom = 100.0
+theme = ExtResource( 9 )
+text = "head rocket "
+align = 1
+
+[node name="head" type="HBoxContainer" parent="Pause/Panel_on/energy"]
+margin_top = 104.0
+margin_right = 198.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 32, 32 )
+custom_constants/separation = 5
+alignment = 1
+
+[node name="Minus" type="TextureRect" parent="Pause/Panel_on/energy/head"]
+margin_left = 14.0
+margin_right = 46.0
+margin_bottom = 32.0
+texture = ExtResource( 10 )
+
+[node name="minus_head" type="Button" parent="Pause/Panel_on/energy/head/Minus"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="display" type="TextureRect" parent="Pause/Panel_on/energy/head"]
+margin_left = 51.0
+margin_right = 147.0
+margin_bottom = 32.0
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="Pause/Panel_on/energy/head/display"]
+anchor_left = 0.502
+anchor_right = 0.502
+margin_left = -20.5444
+margin_top = 1.0
+margin_right = 20.4556
+margin_bottom = 31.0
+theme = ExtResource( 9 )
+text = "999"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plus" type="TextureRect" parent="Pause/Panel_on/energy/head"]
+margin_left = 152.0
+margin_right = 184.0
+margin_bottom = 32.0
+texture = ExtResource( 11 )
+
+[node name="plus_head" type="Button" parent="Pause/Panel_on/energy/head/Plus"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bullet_count" type="Label" parent="Pause/Panel_on/energy"]
+margin_top = 140.0
+margin_right = 198.0
+margin_bottom = 170.0
+theme = ExtResource( 9 )
+text = "bullet count"
+align = 1
+
+[node name="bullets" type="HBoxContainer" parent="Pause/Panel_on/energy"]
+margin_top = 174.0
+margin_right = 198.0
+margin_bottom = 206.0
+rect_min_size = Vector2( 32, 32 )
+custom_constants/separation = 5
+alignment = 1
+
+[node name="Minus" type="TextureRect" parent="Pause/Panel_on/energy/bullets"]
+margin_left = 14.0
+margin_right = 46.0
+margin_bottom = 32.0
+texture = ExtResource( 10 )
+
+[node name="minus_bullet" type="Button" parent="Pause/Panel_on/energy/bullets/Minus"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="display" type="TextureRect" parent="Pause/Panel_on/energy/bullets"]
+margin_left = 51.0
+margin_right = 147.0
+margin_bottom = 32.0
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="Pause/Panel_on/energy/bullets/display"]
+anchor_left = 0.502
+anchor_right = 0.502
+margin_left = -20.5444
+margin_top = 1.0
+margin_right = 20.4556
+margin_bottom = 31.0
+theme = ExtResource( 9 )
+text = "999"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plus" type="TextureRect" parent="Pause/Panel_on/energy/bullets"]
+margin_left = 152.0
+margin_right = 184.0
+margin_bottom = 32.0
+texture = ExtResource( 11 )
+
+[node name="plus_bullet" type="Button" parent="Pause/Panel_on/energy/bullets/Plus"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shield_cell" type="Label" parent="Pause/Panel_on/energy"]
+margin_top = 210.0
+margin_right = 198.0
+margin_bottom = 240.0
+theme = ExtResource( 9 )
+text = "shield cell"
+align = 1
+
+[node name="shield" type="HBoxContainer" parent="Pause/Panel_on/energy"]
+margin_top = 244.0
+margin_right = 198.0
+margin_bottom = 276.0
+rect_min_size = Vector2( 32, 32 )
+custom_constants/separation = 5
+alignment = 1
+
+[node name="Minus" type="TextureRect" parent="Pause/Panel_on/energy/shield"]
+margin_left = 14.0
+margin_right = 46.0
+margin_bottom = 32.0
+texture = ExtResource( 10 )
+
+[node name="minus_shield" type="Button" parent="Pause/Panel_on/energy/shield/Minus"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="display" type="TextureRect" parent="Pause/Panel_on/energy/shield"]
+margin_left = 51.0
+margin_right = 147.0
+margin_bottom = 32.0
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="Pause/Panel_on/energy/shield/display"]
+anchor_left = 0.502
+anchor_right = 0.502
+margin_left = -20.5444
+margin_top = 1.0
+margin_right = 20.4556
+margin_bottom = 31.0
+theme = ExtResource( 9 )
+text = "999"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plus" type="TextureRect" parent="Pause/Panel_on/energy/shield"]
+margin_left = 152.0
+margin_right = 184.0
+margin_bottom = 32.0
+texture = ExtResource( 11 )
+
+[node name="plus_shield" type="Button" parent="Pause/Panel_on/energy/shield/Plus"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="upgrades" type="Control" parent="Pause/Panel_on"]
+anchor_left = 0.484
+anchor_top = 0.357
+anchor_right = 0.824
+anchor_bottom = 0.777
+margin_left = 0.383972
+margin_right = 0.223938
+margin_bottom = -0.200012
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="upgrades" type="Label" parent="Pause/Panel_on/upgrades"]
+anchor_right = 0.979
+anchor_bottom = 1.0
+margin_top = -4.71153
+margin_right = 6.30801
+margin_bottom = -224.512
+custom_fonts/font = SubResource( 9 )
+text = "UPGRADES"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Pause/Panel_on/upgrades"]
+position = Vector2( 182.475, 36.7979 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="scrap_name" type="Label" parent="Pause/Panel_on/upgrades/Sprite"]
+anchor_left = -1.208
+anchor_right = -0.092
+anchor_bottom = 1.0
+margin_left = -0.0319977
+margin_top = -2.0
+margin_right = -0.167999
+margin_bottom = 1.0
+custom_fonts/font = SubResource( 11 )
+text = "Scrap parts"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scrap_value" type="Label" parent="Pause/Panel_on/upgrades/Sprite"]
+anchor_left = 0.031
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.0423715
+margin_top = -1.73557
+margin_right = -0.997627
+margin_bottom = 1.26443
+custom_fonts/font = SubResource( 11 )
+text = "999"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="upgrades_button" type="Control" parent="Pause/Panel_on/upgrades"]
+margin_top = 14.9154
+margin_right = 347.0
+margin_bottom = 14.9154
+
+[node name="max_energy" type="Sprite" parent="Pause/Panel_on/upgrades/upgrades_button"]
+position = Vector2( 4.45453, 166.272 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 20 )
+centered = false
+
+[node name="label_max_energy" type="Label" parent="Pause/Panel_on/upgrades/upgrades_button/max_energy"]
+anchor_left = 0.012
+anchor_top = -0.715
+anchor_right = 0.97
+anchor_bottom = -0.059
+margin_left = -3.35426
+margin_top = 0.0142136
+margin_right = 4.66174
+margin_bottom = 0.0302117
+custom_fonts/font = SubResource( 11 )
+text = "max
+energy"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cost_max_energy" type="Label" parent="Pause/Panel_on/upgrades/upgrades_button/max_energy"]
+anchor_left = 0.012
+anchor_top = -0.715
+anchor_right = 0.97
+anchor_bottom = -0.059
+margin_left = -0.298992
+margin_top = 48.1241
+margin_right = 1.71701
+margin_bottom = 48.1401
+custom_fonts/font = SubResource( 11 )
+text = "99"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up_energy" type="Button" parent="Pause/Panel_on/upgrades/upgrades_button/max_energy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="jump_force" type="Sprite" parent="Pause/Panel_on/upgrades/upgrades_button"]
+position = Vector2( 72.1628, 166.272 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 20 )
+centered = false
+
+[node name="label_jump_force" type="Label" parent="Pause/Panel_on/upgrades/upgrades_button/jump_force"]
+anchor_left = 0.012
+anchor_top = -0.715
+anchor_right = 0.97
+anchor_bottom = -0.059
+margin_left = -0.194469
+margin_top = 0.014183
+margin_right = -0.178471
+margin_bottom = 0.0301812
+custom_fonts/font = SubResource( 11 )
+text = "Jump
+force"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cost_jump_force" type="Label" parent="Pause/Panel_on/upgrades/upgrades_button/jump_force"]
+anchor_left = 0.012
+anchor_top = -0.715
+anchor_right = 0.97
+anchor_bottom = -0.059
+margin_left = -0.194469
+margin_top = 48.4021
+margin_right = -0.178471
+margin_bottom = 48.4181
+custom_fonts/font = SubResource( 11 )
+text = "99"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up_jump" type="Button" parent="Pause/Panel_on/upgrades/upgrades_button/jump_force"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.243195
+margin_right = 0.243195
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rocket_reach" type="Sprite" parent="Pause/Panel_on/upgrades/upgrades_button"]
+position = Vector2( 138.089, 166.272 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 20 )
+centered = false
+
+[node name="label_rocket_reach" type="Label" parent="Pause/Panel_on/upgrades/upgrades_button/rocket_reach"]
+anchor_left = 0.012
+anchor_top = -0.715
+anchor_right = 0.97
+anchor_bottom = -0.059
+margin_left = -1.79963
+margin_top = 0.014183
+margin_right = 6.21637
+margin_bottom = 0.0301812
+custom_fonts/font = SubResource( 11 )
+text = "rocket
+reach"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cost_rocket_reach" type="Label" parent="Pause/Panel_on/upgrades/upgrades_button/rocket_reach"]
+anchor_left = 0.012
+anchor_top = -0.715
+anchor_right = 0.97
+anchor_bottom = -0.059
+margin_left = -0.133007
+margin_top = 48.124
+margin_right = 1.88299
+margin_bottom = 48.14
+custom_fonts/font = SubResource( 11 )
+text = "99"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up_head" type="Button" parent="Pause/Panel_on/upgrades/upgrades_button/rocket_reach"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.304688
+margin_right = 0.304688
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shoot_force" type="Sprite" parent="Pause/Panel_on/upgrades/upgrades_button"]
+position = Vector2( 205.798, 165.711 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 20 )
+centered = false
+
+[node name="label_shoot_force" type="Label" parent="Pause/Panel_on/upgrades/upgrades_button/shoot_force"]
+anchor_left = 0.012
+anchor_top = -0.715
+anchor_right = 0.97
+anchor_bottom = -0.059
+margin_left = 0.942829
+margin_top = 0.481895
+margin_right = 0.958828
+margin_bottom = 0.497894
+custom_fonts/font = SubResource( 11 )
+text = "shoot
+force"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cost_shoot_force" type="Label" parent="Pause/Panel_on/upgrades/upgrades_button/shoot_force"]
+anchor_left = 0.012
+anchor_top = -0.715
+anchor_right = 0.97
+anchor_bottom = -0.059
+margin_left = -0.723797
+margin_top = 48.3136
+margin_right = -0.707798
+margin_bottom = 48.3296
+custom_fonts/font = SubResource( 11 )
+text = "99"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up_shoot" type="Button" parent="Pause/Panel_on/upgrades/upgrades_button/shoot_force"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.130615
+margin_top = 0.467712
+margin_right = 0.130615
+margin_bottom = 0.467712
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shield_force" type="Sprite" parent="Pause/Panel_on/upgrades/upgrades_button"]
+position = Vector2( 271.724, 166.272 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 20 )
+centered = false
+
+[node name="label_shield_force" type="Label" parent="Pause/Panel_on/upgrades/upgrades_button/shield_force"]
+anchor_left = 0.012
+anchor_top = -0.715
+anchor_right = 0.97
+anchor_bottom = -0.059
+margin_left = 1.37563
+margin_top = -0.357033
+margin_right = 4.39163
+margin_bottom = -0.341035
+custom_fonts/font = SubResource( 11 )
+text = "shield
+force"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cost_shield_force" type="Label" parent="Pause/Panel_on/upgrades/upgrades_button/shield_force"]
+anchor_left = 0.012
+anchor_top = -0.715
+anchor_right = 0.97
+anchor_bottom = -0.059
+margin_left = 1.37563
+margin_top = 48.1312
+margin_right = 1.39163
+margin_bottom = 48.1472
+custom_fonts/font = SubResource( 11 )
+text = "99"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up_shield" type="Button" parent="Pause/Panel_on/upgrades/upgrades_button/shield_force"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.192261
+margin_right = 0.192261
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_upgrades" type="Sprite" parent="Pause/Panel_on/upgrades"]
+modulate = Color( 1, 1, 1, 0.486275 )
+position = Vector2( -0.88623, 81.9633 )
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 22 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="Pause/Panel_on"]
+position = Vector2( 943.385, 430.992 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 25 )
+
+[node name="Button" type="Button" parent="Pause/Panel_on/Sprite"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -32.0
+margin_right = -32.0
+margin_bottom = -32.0
+custom_styles/normal = SubResource( 13 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cost_rocket_reach2" type="Label" parent="Pause/Panel_on/Sprite"]
+anchor_right = 1.0
+margin_left = -32.0
+margin_top = -32.0
+margin_right = -32.0
+margin_bottom = -13.0
+custom_fonts/font = SubResource( 11 )
+text = "restart"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="Pause/Panel_on"]
+position = Vector2( 943.385, 479.75 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 24 )
+
+[node name="Button2" type="Button" parent="Pause/Panel_on/Sprite2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -32.0
+margin_right = -32.0
+margin_bottom = -32.0
+custom_styles/normal = SubResource( 14 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cost_rocket_reach3" type="Label" parent="Pause/Panel_on/Sprite2"]
+anchor_right = 1.0
+margin_left = -32.0
+margin_top = -32.0
+margin_right = -32.0
+margin_bottom = -13.0
+custom_fonts/font = SubResource( 11 )
+text = "menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim_panel" type="AnimationPlayer" parent="Pause"]
+anims/start = SubResource( 12 )
+
+[node name="audio_controller" type="Node" parent="."]
+
+[node name="energy_change" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 14 )
+bus = "fx"
+
+[node name="upgrade" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 21 )
+bus = "fx"
+
+[node name="minus_point" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 15 )
+bus = "fx"
+
+[node name="plus_point" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 13 )
+bus = "fx"
+
+[node name="error" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 16 )
+bus = "fx"
+[connection signal="button_down" from="Pause/Panel_on/energy/head/Minus/minus_head" to="." method="_on_minus_head_button_down"]
+[connection signal="button_up" from="Pause/Panel_on/energy/head/Minus/minus_head" to="." method="_on_minus_head_button_up"]
+[connection signal="button_down" from="Pause/Panel_on/energy/head/Plus/plus_head" to="." method="_on_plus_head_button_down"]
+[connection signal="button_up" from="Pause/Panel_on/energy/head/Plus/plus_head" to="." method="_on_plus_head_button_up"]
+[connection signal="button_down" from="Pause/Panel_on/energy/bullets/Minus/minus_bullet" to="." method="_on_minus_bullet_button_down"]
+[connection signal="button_up" from="Pause/Panel_on/energy/bullets/Minus/minus_bullet" to="." method="_on_minus_bullet_button_up"]
+[connection signal="button_down" from="Pause/Panel_on/energy/bullets/Plus/plus_bullet" to="." method="_on_plus_bullet_button_down"]
+[connection signal="button_up" from="Pause/Panel_on/energy/bullets/Plus/plus_bullet" to="." method="_on_plus_bullet_button_up"]
+[connection signal="button_down" from="Pause/Panel_on/energy/shield/Minus/minus_shield" to="." method="_on_minus_shield_button_down"]
+[connection signal="button_up" from="Pause/Panel_on/energy/shield/Minus/minus_shield" to="." method="_on_minus_shield_button_up"]
+[connection signal="button_down" from="Pause/Panel_on/energy/shield/Plus/plus_shield" to="." method="_on_plus_shield_button_down"]
+[connection signal="button_up" from="Pause/Panel_on/energy/shield/Plus/plus_shield" to="." method="_on_plus_shield_button_up"]
+[connection signal="button_down" from="Pause/Panel_on/upgrades/upgrades_button/max_energy/up_energy" to="." method="_on_up_energy_button_down"]
+[connection signal="button_up" from="Pause/Panel_on/upgrades/upgrades_button/max_energy/up_energy" to="." method="_on_up_energy_button_up"]
+[connection signal="button_down" from="Pause/Panel_on/upgrades/upgrades_button/jump_force/up_jump" to="." method="_on_up_jump_button_down"]
+[connection signal="button_up" from="Pause/Panel_on/upgrades/upgrades_button/jump_force/up_jump" to="." method="_on_up_jump_button_up"]
+[connection signal="button_down" from="Pause/Panel_on/upgrades/upgrades_button/rocket_reach/up_head" to="." method="_on_up_head_button_down"]
+[connection signal="button_up" from="Pause/Panel_on/upgrades/upgrades_button/rocket_reach/up_head" to="." method="_on_up_head_button_up"]
+[connection signal="button_down" from="Pause/Panel_on/upgrades/upgrades_button/shoot_force/up_shoot" to="." method="_on_up_shoot_button_down"]
+[connection signal="button_up" from="Pause/Panel_on/upgrades/upgrades_button/shoot_force/up_shoot" to="." method="_on_up_shoot_button_up"]
+[connection signal="button_down" from="Pause/Panel_on/upgrades/upgrades_button/shield_force/up_shield" to="." method="_on_up_shield_button_down"]
+[connection signal="button_up" from="Pause/Panel_on/upgrades/upgrades_button/shield_force/up_shield" to="." method="_on_up_shield_button_up"]
+[connection signal="pressed" from="Pause/Panel_on/Sprite/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Pause/Panel_on/Sprite2/Button2" to="." method="_on_Button2_pressed"]
