@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Energy_change.wav-f9b88e86f7b7acf57f59736bcdeeab13.sample"
+
+[deps]
+
+source_file="res://sounds/placehold_sounds/Energy_change.wav"
+dest_files=[ "res://.import/Energy_change.wav-f9b88e86f7b7acf57f59736bcdeeab13.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

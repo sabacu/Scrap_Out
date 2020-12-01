@@ -1,0 +1,739 @@
+[gd_scene load_steps=49 format=2]
+
+[ext_resource path="res://World/Scenario/Paralax/Camada33.png" type="Texture" id=1]
+[ext_resource path="res://World/Scenario/Paralax/Nuvem_1.png" type="Texture" id=2]
+[ext_resource path="res://World/Scenario/Paralax/Nuvem_2.png" type="Texture" id=3]
+[ext_resource path="res://World/Scenario/Paralax/Camada34.png" type="Texture" id=4]
+[ext_resource path="res://World/Scenario/Paralax/Smoke_33.png" type="Texture" id=5]
+[ext_resource path="res://World/Scenario/Paralax/Smoke_32.png" type="Texture" id=6]
+[ext_resource path="res://World/Scenario/Paralax/Camada3_base.png" type="Texture" id=7]
+[ext_resource path="res://World/Scenario/Paralax/Camada38.png" type="Texture" id=8]
+[ext_resource path="res://World/Scenario/Paralax/Smoke_34.png" type="Texture" id=9]
+[ext_resource path="res://World/Fases/Fase_02.gd" type="Script" id=10]
+[ext_resource path="res://World/Scenario/Paralax/Camada1.png" type="Texture" id=11]
+[ext_resource path="res://World/Scenario/Paralax/Nuvem_3.png" type="Texture" id=12]
+[ext_resource path="res://World/Scenario/Paralax/Camada31.png" type="Texture" id=13]
+[ext_resource path="res://World/Scenario/Paralax/Smoke_3.png" type="Texture" id=14]
+[ext_resource path="res://World/Scenario/Paralax/Camada32.png" type="Texture" id=15]
+[ext_resource path="res://World/Scenario/Paralax/Camada2.png" type="Texture" id=16]
+[ext_resource path="res://World/Scenario/Paralax/Camada37.png" type="Texture" id=17]
+[ext_resource path="res://World/Scenario/Paralax/Camada36.png" type="Texture" id=18]
+[ext_resource path="res://World/Scenario/Paralax/Camada35.png" type="Texture" id=19]
+[ext_resource path="res://World/Scenario/Paralax/Fundo_Fase_2.png" type="Texture" id=20]
+[ext_resource path="res://World/Enemys/Enemy_Toast.tscn" type="PackedScene" id=21]
+[ext_resource path="res://World/Platforms/platform_6.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Chars/Player/Player.tscn" type="PackedScene" id=23]
+[ext_resource path="res://World/Platforms/platform_5.tscn" type="PackedScene" id=24]
+[ext_resource path="res://World/Scenario/Tiles/Ground_Tile.tscn" type="PackedScene" id=25]
+[ext_resource path="res://World/Platforms/platform_2.tscn" type="PackedScene" id=26]
+[ext_resource path="res://World/Enemys/Sub_Blade.tscn" type="PackedScene" id=27]
+[ext_resource path="res://World/Platforms/platform_7.tscn" type="PackedScene" id=28]
+[ext_resource path="res://World/Platforms/platform_4.tscn" type="PackedScene" id=29]
+[ext_resource path="res://World/Enemys/EnemyMosquito.tscn" type="PackedScene" id=30]
+[ext_resource path="res://World/Platforms/platform_1.tscn" type="PackedScene" id=31]
+[ext_resource path="res://World/Platforms/platform_3.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Interface/Interface.tscn" type="PackedScene" id=33]
+[ext_resource path="res://World/Interactive/Collect/Energy.tscn" type="PackedScene" id=34]
+[ext_resource path="res://World/Interactive/Collect/Scrap.tscn" type="PackedScene" id=35]
+[ext_resource path="res://World/Dialogues/Dialogue_box2.tscn" type="PackedScene" id=36]
+[ext_resource path="res://World/Dialogues/Dialogue_box.tscn" type="PackedScene" id=37]
+[ext_resource path="res://World/Dialogues/Dialogue_box3.tscn" type="PackedScene" id=38]
+[ext_resource path="res://art_open_files/kryta_versions/fase_zero_elements2.png" type="Texture" id=39]
+[ext_resource path="res://World/Interactive/Exit.tscn" type="PackedScene" id=40]
+[ext_resource path="res://sounds/musics/fase_03.wav" type="AudioStream" id=41]
+
+[sub_resource type="Animation" id=1]
+resource_name = "cicle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 14 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 9 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ), ExtResource( 15 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 8 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 15 ), ExtResource( 13 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 2445.45, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 87.9055, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 44.2576, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 138.856, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 229.063, 10 )
+
+[node name="Fase_02" type="Node"]
+script = ExtResource( 10 )
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Ground_Tile" parent="World" instance=ExtResource( 25 )]
+modulate = Color( 0.54902, 0.65098, 0.792157, 1 )
+collision_layer = 257
+collision_mask = 264
+tile_data = PoolIntArray( -3604481, 0, 4, -3670016, 0, 196609, -3670015, 0, 196609, -3670014, 0, 196609, -3670013, 0, 196609, -3670012, 0, 196609, -3670011, 0, 196609, -3670010, 0, 196609, -3670009, 0, 196609, -3670008, 0, 196609, -3670007, 0, 196609, -3670006, 0, 196609, -3670005, 0, 196609, -3670004, 0, 196609, -3670003, 0, 196609, -3670002, 0, 196609, -3670001, 0, 196609, -3670000, 0, 196609, -3669999, 0, 196609, -3669998, 0, 196609, -3669997, 0, 196609, -3669996, 0, 196609, -3669995, 0, 196609, -3669994, 0, 196609, -3669993, 0, 196609, -3669992, 0, 196609, -3669991, 0, 196609, -3669990, 0, 196609, -3669989, 0, 196609, -3669988, 0, 196609, -3669987, 0, 196609, -3669986, 0, 196609, -3669985, 0, 196609, -3669984, 0, 196609, -3669983, 0, 196609, -3669982, 0, 196609, -3669981, 0, 196609, -3669980, 0, 196609, -3669979, 0, 196609, -3669978, 0, 196609, -3669977, 0, 196609, -3669976, 0, 196609, -3669975, 0, 196609, -3669974, 0, 196609, -3669973, 0, 196609, -3669972, 0, 196609, -3669971, 0, 196609, -3669970, 0, 196609, -3669969, 0, 196609, -3669968, 0, 196609, -3669967, 0, 196609, -3669966, 0, 196609, -3669965, 0, 196609, -3669964, 0, 196609, -3669963, 0, 196609, -3669962, 0, 196609, -3669961, 0, 196609, -3669960, 0, 196609, -3669959, 0, 196609, -3669958, 0, 196609, -3669957, 0, 196609, -3669956, 0, 196609, -3669955, 0, 196609, -3669954, 0, 196609, -3669953, 0, 196609, -3669952, 0, 196609, -3669951, 0, 196609, -3669950, 0, 196609, -3669949, 0, 196609, -3669948, 0, 196609, -3669947, 0, 196609, -3669946, 0, 196609, -3669945, 0, 196609, -3669944, 0, 196609, -3669943, 0, 196609, -3669942, 0, 196609, -3669941, 0, 196609, -3669940, 0, 196609, -3669939, 0, 196609, -3669938, 0, 196609, -3669937, 0, 196609, -3669936, 0, 196609, -3669935, 0, 196609, -3669934, 0, 196609, -3669933, 0, 196609, -3669932, 0, 196609, -3669931, 0, 196609, -3669930, 0, 196609, -3669929, 0, 196609, -3669928, 0, 196609, -3669927, 0, 196609, -3669926, 0, 196609, -3669925, 0, 196609, -3669924, 0, 196609, -3669923, 0, 196609, -3669922, 0, 196609, -3669921, 0, 196609, -3669920, 0, 196609, -3669919, 0, 196609, -3669918, 0, 196609, -3669917, 0, 196609, -3669916, 0, 196609, -3669915, 0, 196609, -3669914, 0, 196609, -3669913, 0, 196609, -3669912, 0, 7, -3538945, 0, 65539, -3604376, 0, 65539, -3473409, 0, 65539, -3538840, 0, 65539, -3407873, 0, 65539, -3473304, 0, 65539, -3342337, 0, 65539, -3407768, 0, 65539, -3276801, 0, 65539, -3342232, 0, 65539, -3211265, 0, 65539, -3276696, 0, 65539, -3145729, 0, 65539, -3211160, 0, 65539, -3080193, 0, 65539, -3145624, 0, 65539, -3014657, 0, 65539, -3080088, 0, 65539, -2949121, 0, 65539, -3014552, 0, 65539, -2883585, 0, 65539, -2949016, 0, 65539, -2818049, 0, 65539, -2883480, 0, 65539, -2752513, 0, 65539, -2817944, 0, 65539, -2686977, 0, 65539, -2752408, 0, 65539, -2621441, 0, 65539, -2686872, 0, 65539, -2555905, 0, 65539, -2621336, 0, 65539, -2490369, 0, 65539, -2555800, 0, 65539, -2424833, 0, 65539, -2490264, 0, 65539, -2359297, 0, 65539, -2424728, 0, 65539, -2293761, 0, 65539, -2359192, 0, 65539, -2228225, 0, 65539, -2293656, 0, 65539, -2162689, 0, 65539, -2228120, 0, 65539, -2097153, 0, 65539, -2162584, 0, 65539, -2031617, 0, 65539, -2097048, 0, 65539, -1966081, 0, 65539, -2031512, 0, 65539, -1900545, 0, 65539, -1965976, 0, 65539, -1835009, 0, 65539, -1900440, 0, 65539, -1769473, 0, 65539, -1834904, 0, 65539, -1703937, 0, 65539, -1769368, 0, 65539, -1638401, 0, 65539, -1703832, 0, 65539, -1572865, 0, 65539, -1638296, 0, 65539, -1507329, 0, 65539, -1572760, 0, 65539, -1441793, 0, 65539, -1507224, 0, 65539, -1376257, 0, 65539, -1441688, 0, 65539, -1310721, 0, 65539, -1376152, 0, 65539, -1245185, 0, 65539, -1310616, 0, 65539, -1179649, 0, 65539, -1245080, 0, 65539, -1114113, 0, 65539, -1179544, 0, 65539, -1048577, 0, 65539, -1114008, 0, 65539, -983041, 0, 65539, -1048472, 0, 65539, -917505, 0, 65539, -982936, 0, 65539, -851969, 0, 65539, -917400, 0, 65539, -786433, 0, 65539, -851864, 0, 65539, -720897, 0, 65539, -786328, 0, 65539, -655361, 0, 65539, -720792, 0, 65539, -589825, 0, 65539, -655256, 0, 65539, -524289, 0, 65539, -589724, 0, 0, -589723, 0, 1, -589722, 0, 1, -589721, 0, 1, -589720, 0, 131079, -458753, 0, 65539, -524190, 0, 0, -524189, 0, 1, -524188, 0, 65545, -524187, 0, 131073, -524186, 0, 131073, -524185, 0, 131073, -524184, 0, 65543, -393217, 0, 65539, -458655, 0, 196608, -458654, 0, 196614, -458653, 0, 131073, -458652, 0, 131074, -458648, 0, 65539, -327681, 0, 65539, -393181, 0, 0, -393180, 0, 1, -393179, 0, 1, -393178, 0, 1, -393177, 0, 2, -393169, 0, 0, -393168, 0, 2, -393165, 0, 0, -393164, 0, 1, -393163, 0, 2, -393112, 0, 65539, -262145, 0, 65539, -327648, 0, 0, -327647, 0, 1, -327646, 0, 1, -327645, 0, 131078, -327644, 0, 65537, -327643, 0, 65537, -327642, 0, 65537, -327641, 0, 131077, -327640, 0, 1, -327639, 0, 2, -327636, 0, 0, -327635, 0, 2, -327633, 0, 65536, -327632, 0, 131077, -327631, 0, 2, -327629, 0, 65536, -327628, 0, 65541, -327627, 0, 131074, -327586, 0, 0, -327585, 0, 1, -327584, 0, 2, -327576, 0, 65539, -196609, 0, 65539, -262113, 0, 196608, -262112, 0, 196614, -262111, 0, 65544, -262110, 0, 131073, -262109, 0, 65542, -262108, 0, 65537, -262107, 0, 65537, -262106, 0, 65537, -262105, 0, 65541, -262104, 0, 131073, -262103, 0, 196613, -262102, 0, 6, -262101, 0, 1, -262100, 0, 65545, -262099, 0, 196613, -262098, 0, 6, -262097, 0, 131078, -262096, 0, 65537, -262095, 0, 262149, -262094, 0, 196609, -262093, 0, 196614, -262092, 0, 131074, -262050, 0, 131072, -262049, 0, 131073, -262048, 0, 196613, -262047, 0, 196610, -262040, 0, 65539, -131073, 0, 65539, -196575, 0, 131075, -196573, 0, 131072, -196572, 0, 131073, -196571, 0, 131073, -196570, 0, 131073, -196569, 0, 131074, -196566, 0, 131072, -196565, 0, 131073, -196564, 0, 131074, -196562, 0, 131072, -196561, 0, 131073, -196560, 0, 131073, -196559, 0, 131074, -196504, 0, 65539, -65537, 0, 65539, -130975, 0, 0, -130974, 0, 1, -130973, 0, 1, -130972, 0, 2, -130968, 0, 65539, -1, 0, 65539, -65439, 0, 131072, -65438, 0, 131073, -65437, 0, 131073, -65436, 0, 196613, -65435, 0, 196610, -65432, 0, 65539, 65535, 0, 65539, 104, 0, 65539, 131071, 0, 65539, 65638, 0, 0, 65639, 0, 1, 65640, 0, 131079, 196607, 0, 65539, 131171, 0, 0, 131172, 0, 1, 131173, 0, 1, 131174, 0, 131078, 131175, 0, 65537, 131176, 0, 65538, 262143, 0, 65539, 196622, 0, 0, 196623, 0, 2, 196705, 0, 0, 196706, 0, 1, 196707, 0, 131078, 196708, 0, 65537, 196709, 0, 65537, 196710, 0, 65537, 196711, 0, 65537, 196712, 0, 65538, 327679, 0, 131076, 262144, 0, 2, 262157, 0, 0, 262158, 0, 131078, 262159, 0, 65538, 262239, 0, 0, 262240, 0, 1, 262241, 0, 131078, 262242, 0, 65537, 262243, 0, 65537, 262244, 0, 65537, 262245, 0, 65537, 262246, 0, 65537, 262247, 0, 65537, 262248, 0, 65538, 393215, 0, 65536, 327680, 0, 131077, 327681, 0, 1, 327682, 0, 2, 327692, 0, 0, 327693, 0, 131078, 327694, 0, 65537, 327695, 0, 131077, 327696, 0, 2, 327718, 0, 3, 327774, 0, 0, 327775, 0, 131078, 327776, 0, 65537, 327777, 0, 65537, 327778, 0, 65537, 327779, 0, 65537, 327780, 0, 65537, 327781, 0, 65537, 327782, 0, 65537, 327783, 0, 65537, 327784, 0, 65538, 458751, 0, 65536, 393216, 0, 65537, 393217, 0, 65537, 393218, 0, 131077, 393219, 0, 1, 393220, 0, 1, 393221, 0, 1, 393222, 0, 1, 393223, 0, 1, 393224, 0, 1, 393225, 0, 1, 393226, 0, 1, 393227, 0, 1, 393228, 0, 131078, 393229, 0, 65537, 393230, 0, 65537, 393231, 0, 65537, 393232, 0, 131077, 393233, 0, 1, 393234, 0, 1, 393235, 0, 1, 393236, 0, 1, 393237, 0, 1, 393238, 0, 1, 393239, 0, 1, 393240, 0, 1, 393241, 0, 1, 393242, 0, 1, 393243, 0, 1, 393244, 0, 1, 393245, 0, 1, 393246, 0, 1, 393247, 0, 1, 393248, 0, 1, 393249, 0, 1, 393250, 0, 1, 393251, 0, 1, 393252, 0, 1, 393253, 0, 1, 393254, 0, 131080, 393255, 0, 1, 393256, 0, 1, 393257, 0, 1, 393258, 0, 1, 393259, 0, 1, 393260, 0, 1, 393261, 0, 1, 393262, 0, 1, 393263, 0, 1, 393264, 0, 1, 393265, 0, 1, 393266, 0, 1, 393267, 0, 1, 393268, 0, 1, 393269, 0, 1, 393270, 0, 1, 393271, 0, 1, 393272, 0, 1, 393273, 0, 1, 393274, 0, 1, 393275, 0, 1, 393276, 0, 1, 393277, 0, 1, 393278, 0, 1, 393279, 0, 1, 393280, 0, 1, 393281, 0, 1, 393282, 0, 1, 393283, 0, 1, 393284, 0, 1, 393285, 0, 1, 393286, 0, 1, 393287, 0, 1, 393288, 0, 1, 393289, 0, 1, 393290, 0, 1, 393291, 0, 1, 393292, 0, 1, 393293, 0, 1, 393294, 0, 1, 393295, 0, 1, 393296, 0, 1, 393297, 0, 1, 393298, 0, 1, 393299, 0, 1, 393300, 0, 1, 393301, 0, 1, 393302, 0, 1, 393303, 0, 1, 393304, 0, 1, 393305, 0, 1, 393306, 0, 1, 393307, 0, 1, 393308, 0, 1, 393309, 0, 1, 393310, 0, 131078, 393311, 0, 65537, 393312, 0, 65537, 393313, 0, 65537, 393314, 0, 65537, 393315, 0, 65537, 393316, 0, 65537, 393317, 0, 65537, 393318, 0, 65537, 393319, 0, 65537, 393320, 0, 65538, 524287, 0, 131072, 458752, 0, 131073, 458753, 0, 131073, 458754, 0, 131073, 458755, 0, 131073, 458756, 0, 131073, 458757, 0, 131073, 458758, 0, 131073, 458759, 0, 131073, 458760, 0, 131073, 458761, 0, 131073, 458762, 0, 131073, 458763, 0, 131073, 458764, 0, 131073, 458765, 0, 131073, 458766, 0, 131073, 458767, 0, 131073, 458768, 0, 131073, 458769, 0, 131073, 458770, 0, 131073, 458771, 0, 131073, 458772, 0, 131073, 458773, 0, 131073, 458774, 0, 131073, 458775, 0, 131073, 458776, 0, 131073, 458777, 0, 131073, 458778, 0, 131073, 458779, 0, 131073, 458780, 0, 131073, 458781, 0, 131073, 458782, 0, 131073, 458783, 0, 131073, 458784, 0, 131073, 458785, 0, 131073, 458786, 0, 131073, 458787, 0, 131073, 458788, 0, 131073, 458789, 0, 131073, 458790, 0, 131073, 458791, 0, 131073, 458792, 0, 131073, 458793, 0, 131073, 458794, 0, 131073, 458795, 0, 131073, 458796, 0, 131073, 458797, 0, 131073, 458798, 0, 131073, 458799, 0, 131073, 458800, 0, 131073, 458801, 0, 131073, 458802, 0, 131073, 458803, 0, 131073, 458804, 0, 131073, 458805, 0, 131073, 458806, 0, 131073, 458807, 0, 131073, 458808, 0, 131073, 458809, 0, 131073, 458810, 0, 131073, 458811, 0, 131073, 458812, 0, 131073, 458813, 0, 131073, 458814, 0, 131073, 458815, 0, 131073, 458816, 0, 131073, 458817, 0, 131073, 458818, 0, 131073, 458819, 0, 131073, 458820, 0, 131073, 458821, 0, 131073, 458822, 0, 131073, 458823, 0, 131073, 458824, 0, 131073, 458825, 0, 131073, 458826, 0, 131073, 458827, 0, 131073, 458828, 0, 131073, 458829, 0, 131073, 458830, 0, 131073, 458831, 0, 131073, 458832, 0, 131073, 458833, 0, 131073, 458834, 0, 131073, 458835, 0, 131073, 458836, 0, 131073, 458837, 0, 131073, 458838, 0, 131073, 458839, 0, 131073, 458840, 0, 131073, 458841, 0, 131073, 458842, 0, 131073, 458843, 0, 131073, 458844, 0, 131073, 458845, 0, 131073, 458846, 0, 131073, 458847, 0, 131073, 458848, 0, 131073, 458849, 0, 131073, 458850, 0, 131073, 458851, 0, 131073, 458852, 0, 131073, 458853, 0, 131073, 458854, 0, 131073, 458855, 0, 131073, 458856, 0, 131074 )
+
+[node name="Exit" parent="World/Ground_Tile" instance=ExtResource( 40 )]
+position = Vector2( 9955.39, -926.886 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="World"]
+
+[node name="background_level" type="Sprite" parent="World/ParallaxBackground"]
+texture = ExtResource( 20 )
+centered = false
+
+[node name="nuvem" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 1298.61, 0 )
+motion_scale = Vector2( 0.6, 0.6 )
+motion_mirroring = Vector2( 3072, 1200 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="nuvem2" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 523.251, 0 )
+motion_scale = Vector2( 0.7, 0.7 )
+motion_mirroring = Vector2( 6144, 1800 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem2"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="nuvem3" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 2732.78, 0 )
+motion_scale = Vector2( 0.9, 0.9 )
+motion_mirroring = Vector2( 1536, 1800 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem3"]
+texture = ExtResource( 12 )
+centered = false
+
+[node name="smoke" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 444.741, 0 )
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 4096, 600 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/smoke"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="anim" type="AnimationPlayer" parent="World/ParallaxBackground/smoke"]
+autoplay = "cicle"
+anims/cicle = SubResource( 1 )
+
+[node name="parallax_guindaste" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 0, 299.68 )
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 1536, 0 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/parallax_guindaste"]
+position = Vector2( -400.744, -598.937 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="World/ParallaxBackground/parallax_guindaste"]
+position = Vector2( -400.744, 1.06287 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="anim_parallax" type="AnimationPlayer" parent="World/ParallaxBackground/parallax_guindaste"]
+autoplay = "cicle"
+anims/cicle = SubResource( 2 )
+
+[node name="parallax_yellow" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 0, 104.65 )
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1228.8, 0 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/parallax_yellow"]
+position = Vector2( 0, 1.06287 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="parallax_red" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 0, 80.8662 )
+motion_scale = Vector2( 0.7, 1 )
+motion_mirroring = Vector2( 1536, 0 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/parallax_red"]
+position = Vector2( 0, 1.06287 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="nuvem4" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( -566.063, -290.167 )
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 3072, 1200 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem4"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="nuvem5" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 1496, -665.956 )
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 6144, 1800 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem5"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="nuvem6" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 1496, -218.814 )
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 1536, 1800 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem6"]
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Platforms" type="Node2D" parent="World"]
+
+[node name="platform_1" parent="World/Platforms" instance=ExtResource( 29 )]
+position = Vector2( 854, 329 )
+
+[node name="platform_2" parent="World/Platforms" instance=ExtResource( 22 )]
+position = Vector2( 2564.98, 25.2425 )
+
+[node name="platform_3" parent="World/Platforms" instance=ExtResource( 24 )]
+position = Vector2( 1788.93, 94.0581 )
+
+[node name="platform_4" parent="World/Platforms" instance=ExtResource( 26 )]
+position = Vector2( 1232.71, -399.128 )
+
+[node name="platform_5" parent="World/Platforms" instance=ExtResource( 28 )]
+position = Vector2( 675.511, -984.613 )
+
+[node name="platform_13" parent="World/Platforms" instance=ExtResource( 31 )]
+position = Vector2( 3756.06, 546.865 )
+rotation = -0.858438
+
+[node name="platform_8" parent="World/Platforms" instance=ExtResource( 32 )]
+position = Vector2( 4114.17, -870.429 )
+
+[node name="platform_16" parent="World/Platforms" instance=ExtResource( 32 )]
+position = Vector2( 4114.17, -870.429 )
+
+[node name="platform_17" parent="World/Platforms" instance=ExtResource( 32 )]
+position = Vector2( 5563.96, 549.158 )
+
+[node name="platform_9" parent="World/Platforms" instance=ExtResource( 24 )]
+position = Vector2( 4652.27, -1415.66 )
+
+[node name="platform_18" parent="World/Platforms" instance=ExtResource( 24 )]
+position = Vector2( 5951.85, 257.007 )
+
+[node name="platform_10" parent="World/Platforms" instance=ExtResource( 22 )]
+position = Vector2( 3911.04, -1729.26 )
+
+[node name="platform_19" parent="World/Platforms" instance=ExtResource( 22 )]
+position = Vector2( 5617.47, -99.0165 )
+
+[node name="platform_11" parent="World/Platforms" instance=ExtResource( 28 )]
+position = Vector2( 4666.52, -2089.18 )
+
+[node name="platform_12" parent="World/Platforms" instance=ExtResource( 26 )]
+position = Vector2( 3922.11, 556.043 )
+
+[node name="platform_15" parent="World/Platforms" instance=ExtResource( 31 )]
+position = Vector2( 4066.35, 555.274 )
+rotation = -0.0922792
+
+[node name="platform_14" parent="World/Platforms" instance=ExtResource( 28 )]
+position = Vector2( 3922.51, 459.715 )
+
+[node name="platform_20" parent="World/Platforms" instance=ExtResource( 24 )]
+position = Vector2( 8423.4, -1253.1 )
+
+[node name="platform_21" parent="World/Platforms" instance=ExtResource( 28 )]
+position = Vector2( 8437.66, -1926.61 )
+
+[node name="platform_22" parent="World/Platforms" instance=ExtResource( 22 )]
+position = Vector2( 7449.53, -1601.44 )
+
+[node name="Collectables" type="Node2D" parent="World"]
+
+[node name="Energy" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 469.621, 532.169 )
+
+[node name="Energy2" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 671.97, 532.169 )
+
+[node name="Energy3" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 731.545, 235.5 )
+
+[node name="Energy4" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 802.715, 235.5 )
+
+[node name="Energy5" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 1399.79, 226.51 )
+
+[node name="Energy6" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 1470.96, 226.51 )
+
+[node name="Energy13" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 558.3, -1109.49 )
+
+[node name="Energy14" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 629.469, -1109.49 )
+
+[node name="Energy15" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 3865.79, -1893.49 )
+
+[node name="Energy16" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 3936.96, -1893.49 )
+
+[node name="Energy17" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 4564.81, -2204.65 )
+
+[node name="Energy18" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 4635.98, -2204.65 )
+
+[node name="Energy7" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 3828.55, 332.89 )
+
+[node name="Energy8" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 3899.72, 332.89 )
+
+[node name="Energy9" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 9615.01, 136.612 )
+
+[node name="Energy10" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 9686.18, 136.612 )
+
+[node name="Energy11" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 9135.71, -556.508 )
+
+[node name="Energy12" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 9206.87, -556.508 )
+
+[node name="Scrap" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 566.023, 531.965 )
+
+[node name="Scrap2" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 787.179, 531.965 )
+
+[node name="Scrap3" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 930.131, 231.765 )
+
+[node name="Scrap4" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 1004.97, 231.765 )
+
+[node name="Scrap37" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 1434.79, 169.027 )
+
+[node name="Scrap5" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 1198.4, -524.775 )
+
+[node name="Scrap6" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 1273.24, -524.775 )
+
+[node name="Scrap7" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 719.096, -1112.77 )
+
+[node name="Scrap8" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 793.936, -1112.77 )
+
+[node name="Energy19" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 3487.9, -647.167 )
+
+[node name="Energy20" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 3559.07, -647.167 )
+
+[node name="Scrap9" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 3648.69, -650.445 )
+
+[node name="Scrap10" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 3723.53, -650.445 )
+
+[node name="Scrap11" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 4074.6, -983.116 )
+
+[node name="Scrap12" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 4149.44, -983.116 )
+
+[node name="Scrap19" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 5582.6, -255.116 )
+
+[node name="Scrap20" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 5657.44, -255.116 )
+
+[node name="Scrap21" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 5924.6, 150.884 )
+
+[node name="Scrap22" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 5999.44, 150.884 )
+
+[node name="Scrap23" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 9422.37, 234.361 )
+
+[node name="Scrap24" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 9902.53, 37.5914 )
+
+[node name="Scrap25" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 9527.49, -246.632 )
+
+[node name="Scrap26" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 9366.03, -724.261 )
+
+[node name="Scrap27" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 9680.53, -917.667 )
+
+[node name="Scrap13" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 4625.52, -1508.61 )
+
+[node name="Scrap14" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 4700.36, -1508.61 )
+
+[node name="Scrap15" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 4715.57, -2206.8 )
+
+[node name="Scrap16" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 4790.41, -2206.8 )
+
+[node name="Scrap17" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 4631.87, -2282.02 )
+
+[node name="Scrap18" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 4706.71, -2282.02 )
+
+[node name="Energy21" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 8335.94, -2042.08 )
+
+[node name="Energy22" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 8407.11, -2042.08 )
+
+[node name="Scrap28" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 8396.65, -1346.05 )
+
+[node name="Scrap29" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 8471.49, -1346.05 )
+
+[node name="Scrap30" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 8486.7, -2044.23 )
+
+[node name="Scrap31" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 8561.54, -2044.23 )
+
+[node name="Scrap32" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 8403.01, -2119.45 )
+
+[node name="Scrap33" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 8477.85, -2119.45 )
+
+[node name="Scrap34" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 7490.3, -1750.35 )
+
+[node name="Scrap35" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 7565.14, -1750.35 )
+
+[node name="Scrap36" parent="World/Collectables" instance=ExtResource( 35 )]
+position = Vector2( 7453.45, -1829.57 )
+
+[node name="Energy23" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 7337.28, -1749.67 )
+
+[node name="Energy24" parent="World/Collectables" instance=ExtResource( 34 )]
+position = Vector2( 7408.45, -1749.67 )
+
+[node name="land_detect" type="Area2D" parent="World"]
+collision_layer = 256
+collision_mask = 8
+
+[node name="shape" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 2714.18, 588.534 )
+shape = SubResource( 3 )
+
+[node name="shape2" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 7601.47, 588.534 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 186.455, 490.138 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 1437.54, 296.529 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9219.71, 393.64 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9414.16, 296.809 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9891.18, 103.94 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 4125.35, -375.439 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 3925.56, -471.764 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 4314.43, -471.764 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 4604.6, -566.901 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9506.23, -759.606 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 41.2035, 397.051 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 1205.2, 489.093 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 1306.22, 393.684 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 1575.61, 486.848 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 3028.82, -378.897 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 4744.85, -472.844 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 4847.12, -376.519 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 4463, -376.519 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9078.13, 492.544 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9738.14, -87.3005 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9352.33, -374.975 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9362.81, -663.4 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 3223.3, -472.419 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 5041.32, -567.441 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9651.03, 193.38 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9168.48, -468.079 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 3601.16, -568.779 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9467.18, -184.846 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 9834.34, -856.885 )
+shape = SubResource( 7 )
+
+[node name="shape3" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 8620.67, 588.534 )
+shape = SubResource( 3 )
+
+[node name="Chars" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Player" parent="Chars" instance=ExtResource( 23 )]
+position = Vector2( 48.3522, 337.846 )
+z_index = 1
+
+[node name="Toast" parent="Chars" instance=ExtResource( 21 )]
+position = Vector2( 1115.54, 533.363 )
+
+[node name="Toast2" parent="Chars" instance=ExtResource( 21 )]
+position = Vector2( 3576.2, 530.366 )
+
+[node name="Toast3" parent="Chars" instance=ExtResource( 21 )]
+position = Vector2( 8898.92, 533.363 )
+
+[node name="Sub_Blade" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 1441.72, 302.541 )
+
+[node name="Sub_Blade2" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 2536.62, 589.893 )
+
+[node name="Sub_Blade3" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 2833.29, 589.893 )
+
+[node name="Sub_Blade4" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 3121.94, 589.893 )
+
+[node name="Sub_Blade5" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 3507.43, -562.474 )
+
+[node name="Sub_Blade6" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 3588.82, -562.474 )
+
+[node name="Sub_Blade7" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 3689.62, -562.474 )
+
+[node name="Sub_Blade18" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 6514.18, 593.433 )
+
+[node name="Sub_Blade19" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 6595.57, 593.433 )
+
+[node name="Sub_Blade21" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 7694.42, 593.433 )
+
+[node name="Sub_Blade22" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 7775.81, 593.433 )
+
+[node name="Sub_Blade20" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 6696.37, 593.433 )
+
+[node name="Sub_Blade8" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 9622.18, 207.668 )
+
+[node name="Sub_Blade10" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 9719.44, 207.668 )
+
+[node name="Sub_Blade11" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 9413.71, -171.93 )
+
+[node name="Sub_Blade12" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 9495.1, -171.93 )
+
+[node name="Sub_Blade14" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 9132.02, -463.128 )
+
+[node name="Sub_Blade15" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 9213.42, -463.128 )
+
+[node name="Sub_Blade16" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 9473.64, -752.48 )
+
+[node name="Sub_Blade17" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 9555.03, -752.48 )
+
+[node name="Sub_Blade13" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 9595.89, -171.93 )
+
+[node name="EnemyMosquito" parent="Chars" instance=ExtResource( 30 )]
+position = Vector2( 5136.73, -738.45 )
+
+[node name="EnemyMosquito2" parent="Chars" instance=ExtResource( 30 )]
+position = Vector2( 8271.19, 262.419 )
+
+[node name="Sub_Blade23" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 8713.63, 593.433 )
+
+[node name="Sub_Blade24" parent="Chars" instance=ExtResource( 27 )]
+position = Vector2( 8795.02, 593.433 )
+
+[node name="Dialogue_box" parent="Chars" instance=ExtResource( 37 )]
+position = Vector2( 215.873, 371.884 )
+
+[node name="shape" parent="Chars/Dialogue_box" index="1"]
+position = Vector2( 0, 98.5 )
+
+[node name="Dialogue_box_2" parent="Chars" instance=ExtResource( 36 )]
+position = Vector2( 2332.09, 500.383 )
+
+[node name="shape" parent="Chars/Dialogue_box_2" index="1"]
+position = Vector2( 10.5112, 60.363 )
+
+[node name="Dialogue_box_3" parent="Chars" instance=ExtResource( 38 )]
+position = Vector2( 3996.21, 327.319 )
+
+[node name="Polish_visual" type="Node" parent="."]
+
+[node name="fase_zero_elements2" type="Sprite" parent="Polish_visual"]
+position = Vector2( 231.095, 463.871 )
+rotation = 0.24424
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 39 )
+region_enabled = true
+region_rect = Rect2( 26, 2, 165, 230 )
+
+[node name="fase_zero_elements3" type="Sprite" parent="Polish_visual"]
+position = Vector2( 2358.64, 572.36 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 39 )
+region_enabled = true
+region_rect = Rect2( 190, 231, 246, 175 )
+
+[node name="fase_zero_elements4" type="Sprite" parent="Polish_visual"]
+position = Vector2( 4026.74, 395.238 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 39 )
+region_enabled = true
+region_rect = Rect2( 435, 237, 178, 177 )
+
+[node name="Interface" parent="." instance=ExtResource( 33 )]
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 41 )
+autoplay = true
+bus = "music"
+
+[editable path="Chars/Dialogue_box"]
+
+[editable path="Chars/Dialogue_box_2"]

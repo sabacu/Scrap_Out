@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Collect.wav-aca26e0d3b6e906ac1eb009feaa023c1.sample"
+
+[deps]
+
+source_file="res://sounds/placehold_sounds/Collect.wav"
+dest_files=[ "res://.import/Collect.wav-aca26e0d3b6e906ac1eb009feaa023c1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

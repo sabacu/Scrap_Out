@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/upgrade.wav-c9a8d702814f1a08a85df10c53d287ba.sample"
+
+[deps]
+
+source_file="res://sounds/placehold_sounds/upgrade.wav"
+dest_files=[ "res://.import/upgrade.wav-c9a8d702814f1a08a85df10c53d287ba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

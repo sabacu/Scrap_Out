@@ -1,0 +1,307 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://World/Scenario/Paralax/Camada37.png" type="Texture" id=1]
+[ext_resource path="res://World/Scenario/Paralax/Camada2.png" type="Texture" id=2]
+[ext_resource path="res://World/Scenario/Paralax/Camada34.png" type="Texture" id=3]
+[ext_resource path="res://World/Enemys/Boss/BOSS_Base.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/Enemys/Boss/mastro.png" type="Texture" id=5]
+[ext_resource path="res://World/Fases/Fase_04.gd" type="Script" id=6]
+[ext_resource path="res://World/Enemys/Boss/SpawnPoint_1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Scenario/Tiles/Ground_Tile.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World/Enemys/Boss/SpawnPoint_2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://World/Enemys/Boss/BOSS_CLAW.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World/Platforms/platform_3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/Platforms/platform_1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Interface/Interface.tscn" type="PackedScene" id=13]
+[ext_resource path="res://World/Platforms/platform_4.tscn" type="PackedScene" id=14]
+[ext_resource path="res://World/Platforms/platform_2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://World/Platforms/platform_6.tscn" type="PackedScene" id=16]
+[ext_resource path="res://sounds/musics/fase_02.wav" type="AudioStream" id=17]
+[ext_resource path="res://World/Interactive/Collect/Energy.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Chars/Player/Player.tscn" type="PackedScene" id=20]
+[ext_resource path="res://World/Scenario/Paralax/Camada33.png" type="Texture" id=21]
+[ext_resource path="res://World/Scenario/Paralax/Nuvem_1.png" type="Texture" id=22]
+[ext_resource path="res://World/Scenario/Paralax/Nuvem_2.png" type="Texture" id=23]
+[ext_resource path="res://World/Scenario/Paralax/Camada35.png" type="Texture" id=24]
+[ext_resource path="res://World/Scenario/Paralax/Camada38.png" type="Texture" id=25]
+[ext_resource path="res://World/Scenario/Paralax/Camada1.png" type="Texture" id=26]
+[ext_resource path="res://World/Scenario/Paralax/Camada31.png" type="Texture" id=30]
+[ext_resource path="res://World/Scenario/Paralax/Camada36.png" type="Texture" id=31]
+[ext_resource path="res://World/Scenario/Paralax/Camada3_base.png" type="Texture" id=32]
+[ext_resource path="res://World/Scenario/Paralax/Nuvem_3.png" type="Texture" id=33]
+[ext_resource path="res://World/Scenario/Paralax/Camada32.png" type="Texture" id=34]
+[ext_resource path="res://World/Scenario/Paralax/Fundo_Fase_3.png" type="Texture" id=36]
+
+[sub_resource type="Animation" id=1]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 30 ), ExtResource( 34 ), ExtResource( 21 ), ExtResource( 3 ), ExtResource( 24 ), ExtResource( 31 ), ExtResource( 1 ), ExtResource( 25 ), ExtResource( 1 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 3 ), ExtResource( 21 ), ExtResource( 34 ), ExtResource( 30 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "cicle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpawnPoint_2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 339.242, -1283.79 ), Vector2( 63.5977, -1283.79 ), Vector2( 228.45, -1283.79 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SpawnPoint_1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 709.476, -1284.68 ), Vector2( 433.831, -1284.68 ), Vector2( 598.684, -1284.68 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 615.303, 10 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "cicle"
+length = 25.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Platforms:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 19.6, 21, 25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1308.14, 0 ), Vector2( 0, 0 ), Vector2( -7112.03, 0 ), Vector2( -5978.55, -1099.91 ), Vector2( 2983.78, -1251.78 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Platforms:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 19.6, 19.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false ]
+}
+
+[node name="Fase_04" type="Node"]
+script = ExtResource( 6 )
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Platforms" type="Node2D" parent="World"]
+visible = false
+position = Vector2( 2983.78, -1251.78 )
+
+[node name="platform_1" parent="World/Platforms" instance=ExtResource( 11 )]
+position = Vector2( 1429.79, 391.036 )
+
+[node name="platform_2" parent="World/Platforms" instance=ExtResource( 14 )]
+position = Vector2( 2597.17, 186.035 )
+
+[node name="platform_3" parent="World/Platforms" instance=ExtResource( 15 )]
+position = Vector2( 3184.65, 448.358 )
+
+[node name="platform_4" parent="World/Platforms" instance=ExtResource( 12 )]
+position = Vector2( 5244.73, 398.553 )
+
+[node name="platform_5" parent="World/Platforms" instance=ExtResource( 16 )]
+position = Vector2( 6219.55, 253.307 )
+
+[node name="Ground_Tile" parent="World" instance=ExtResource( 8 )]
+modulate = Color( 0.792157, 0.764706, 0.54902, 1 )
+collision_layer = 257
+collision_mask = 264
+tile_data = PoolIntArray( -917505, 0, 4, -983040, 0, 196609, -983039, 0, 196609, -983038, 0, 196609, -983037, 0, 196609, -983036, 0, 196609, -983035, 0, 196609, -983034, 0, 196609, -983033, 0, 196609, -983032, 0, 196609, -983031, 0, 7, -851969, 0, 65539, -917495, 0, 65539, -786433, 0, 65539, -851959, 0, 65539, -720897, 0, 65539, -786423, 0, 65539, -655361, 0, 65539, -720887, 0, 65539, -589825, 0, 65539, -655351, 0, 65539, -524289, 0, 65539, -589815, 0, 65539, -458753, 0, 65539, -524279, 0, 65539, -393217, 0, 65539, -458743, 0, 65539, -327681, 0, 65539, -393207, 0, 65539, -262145, 0, 65539, -327671, 0, 65539, -196609, 0, 65539, -262135, 0, 65539, -131073, 0, 65539, -196599, 0, 65539, -65537, 0, 65539, -131063, 0, 65539, -1, 0, 65539, -65527, 0, 65539, 65535, 0, 65539, 9, 0, 65539, 131071, 0, 65539, 65545, 0, 65539, 196607, 0, 65539, 131081, 0, 65539, 262143, 0, 65539, 196617, 0, 65539, 327679, 0, 65539, 262153, 0, 65539, 393215, 0, 65539, 327689, 0, 65539, 458751, 0, 131076, 393216, 0, 1, 393217, 0, 1, 393218, 0, 1, 393219, 0, 1, 393220, 0, 1, 393221, 0, 1, 393222, 0, 1, 393223, 0, 1, 393224, 0, 1, 393225, 0, 131079, 524287, 0, 131072, 458752, 0, 131073, 458753, 0, 131073, 458754, 0, 131073, 458755, 0, 131073, 458756, 0, 131073, 458757, 0, 131073, 458758, 0, 131073, 458759, 0, 131073, 458760, 0, 131073, 458761, 0, 131074 )
+
+[node name="mastro" type="Sprite" parent="World/Ground_Tile"]
+position = Vector2( 906.415, -220.428 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="World"]
+
+[node name="background_level" type="Sprite" parent="World/ParallaxBackground"]
+texture = ExtResource( 36 )
+centered = false
+
+[node name="nuvem" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 1298.61, 0 )
+motion_scale = Vector2( 0.6, 0.6 )
+motion_mirroring = Vector2( 3072, 1200 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem"]
+texture = ExtResource( 22 )
+centered = false
+
+[node name="nuvem2" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 523.251, 0 )
+motion_scale = Vector2( 0.7, 0.7 )
+motion_mirroring = Vector2( 6144, 1800 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem2"]
+texture = ExtResource( 23 )
+centered = false
+
+[node name="nuvem3" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 2732.78, 0 )
+motion_scale = Vector2( 0.9, 0.9 )
+motion_mirroring = Vector2( 1536, 1800 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem3"]
+texture = ExtResource( 33 )
+centered = false
+
+[node name="parallax_guindaste" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 719.187, 560.385 )
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 1536, 0 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/parallax_guindaste"]
+position = Vector2( -400.744, -598.937 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="World/ParallaxBackground/parallax_guindaste"]
+position = Vector2( -400.744, 1.06287 )
+texture = ExtResource( 32 )
+centered = false
+
+[node name="anim_parallax" type="AnimationPlayer" parent="World/ParallaxBackground/parallax_guindaste"]
+autoplay = "cicle"
+anims/cicle = SubResource( 1 )
+
+[node name="parallax_yellow" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 674.238, 104.65 )
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1228.8, 0 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/parallax_yellow"]
+position = Vector2( 0, 1.06287 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="parallax_red" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( -374.577, 158.778 )
+motion_scale = Vector2( 0.7, 1 )
+motion_mirroring = Vector2( 1536, 0 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/parallax_red"]
+position = Vector2( 0, 1.06287 )
+texture = ExtResource( 26 )
+centered = false
+
+[node name="nuvem4" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( -566.063, -290.167 )
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 3072, 1200 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem4"]
+texture = ExtResource( 22 )
+centered = false
+
+[node name="nuvem5" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 1496, -665.956 )
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 6144, 1800 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem5"]
+texture = ExtResource( 23 )
+centered = false
+
+[node name="nuvem6" type="ParallaxLayer" parent="World/ParallaxBackground"]
+position = Vector2( 1496, -218.814 )
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 1536, 1800 )
+
+[node name="Sprite" type="Sprite" parent="World/ParallaxBackground/nuvem6"]
+texture = ExtResource( 33 )
+centered = false
+
+[node name="background_level2" type="Sprite" parent="World/ParallaxBackground"]
+visible = false
+position = Vector2( 806.853, -425.736 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Collectables" type="Node2D" parent="World"]
+
+[node name="Energy" parent="World/Collectables" instance=ExtResource( 19 )]
+position = Vector2( 172.331, 538.01 )
+
+[node name="Energy2" parent="World/Collectables" instance=ExtResource( 19 )]
+position = Vector2( 219.524, 538.01 )
+
+[node name="Energy3" parent="World/Collectables" instance=ExtResource( 19 )]
+position = Vector2( 266.718, 538.01 )
+
+[node name="SpawnPoint_1" parent="World/Collectables" instance=ExtResource( 7 )]
+position = Vector2( 709.476, -1284.68 )
+
+[node name="SpawnPoint_2" parent="World/Collectables" instance=ExtResource( 9 )]
+position = Vector2( 339.242, -1283.79 )
+
+[node name="anim_spawn_point" type="AnimationPlayer" parent="World/Collectables"]
+playback_speed = 0.2
+anims/cicle = SubResource( 2 )
+
+[node name="land_detect" type="Area2D" parent="World"]
+collision_layer = 256
+collision_mask = 8
+
+[node name="shape" type="CollisionShape2D" parent="World/land_detect"]
+position = Vector2( 504.475, 588.534 )
+shape = SubResource( 3 )
+
+[node name="anim_platforms" type="AnimationPlayer" parent="World"]
+autoplay = "cicle"
+playback_speed = 0.1
+anims/cicle = SubResource( 4 )
+
+[node name="Chars" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Player" parent="Chars" instance=ExtResource( 20 )]
+position = Vector2( 167.066, 533.437 )
+z_index = 1
+
+[node name="BOSS" parent="Chars" instance=ExtResource( 4 )]
+position = Vector2( 861.932, 486 )
+z_index = 5
+
+[node name="BOSS_CLAW" parent="Chars" instance=ExtResource( 10 )]
+position = Vector2( 91.4095, -52.5576 )
+
+[node name="Polish_visual" type="Node" parent="."]
+
+[node name="Interface" parent="." instance=ExtResource( 13 )]
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
+bus = "music"

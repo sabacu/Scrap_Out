@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://World/Fases/Final_Credits.gd" type="Script" id=1]
+[ext_resource path="res://Chars/Player/player_body_sheet.png" type="Texture" id=2]
+[ext_resource path="res://Chars/Player/player_head_sheet.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Interface/Robot Crush.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = SubResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "walk"
+length = 1.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 511.937, 269.064 ), Vector2( 518.611, 267.73 ), Vector2( 512.414, 275.643 ) ]
+}
+
+[node name="Fundo" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tip1" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -118.0
+margin_top = 21.0
+margin_right = 119.0
+margin_bottom = 69.0
+custom_fonts/font = SubResource( 2 )
+text = "thanks for playing"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tip2" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -123.0
+margin_top = 21.9871
+margin_right = 123.0
+margin_bottom = 69.9871
+custom_fonts/font = SubResource( 2 )
+text = "you did it"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="Sprite" parent="."]
+position = Vector2( 511.937, 269.064 )
+texture = ExtResource( 2 )
+hframes = 35
+frame = 1
+
+[node name="Head" type="Sprite" parent="."]
+position = Vector2( 511.937, 269.064 )
+texture = ExtResource( 3 )
+hframes = 6
+
+[node name="anim_player" type="AnimationPlayer" parent="."]
+autoplay = "walk"
+anims/walk = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
