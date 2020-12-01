@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://art_open_files/head_sprite_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Chars/Player/Head_Rigid_Body.gd" type="Script" id=2]
+[ext_resource path="res://sounds/placehold_sounds/Head.wav" type="AudioStream" id=3]
+[ext_resource path="res://art_open_files/head_shield_sheet.png" type="Texture" id=4]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 23.6342, 23.5691 )
+
+[sub_resource type="Animation" id=3]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 1, 2 ]
+}
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 28.742
+
+[node name="Head" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 3
+mass = 2.0
+physics_material_override = SubResource( 1 )
+gravity_scale = 2.0
+sleeping = true
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+position = Vector2( -2.5, 18 )
+texture = ExtResource( 1 )
+hframes = 3
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 3 )
+anims/travel = SubResource( 4 )
+
+[node name="head_cam" type="Camera2D" parent="."]
+current = true
+limit_left = -94
+limit_bottom = 658
+smoothing_speed = 2.0
+
+[node name="detect_touch" type="Area2D" parent="."]
+collision_layer = 264
+collision_mask = 256
+
+[node name="shape" type="CollisionShape2D" parent="detect_touch"]
+shape = SubResource( 5 )
+
+[node name="head_rocket" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+bus = "fx"
+
+[node name="head_shield" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+show_behind_parent = true
+position = Vector2( 1.18921, 5.05413 )
+scale = Vector2( 1.1, 1.1 )
+texture = ExtResource( 4 )
+offset = Vector2( -4.91252, 12.5851 )
+hframes = 6
+[connection signal="area_entered" from="detect_touch" to="." method="_on_detect_touch_area_entered"]

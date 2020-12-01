@@ -1,0 +1,277 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Chars/Player/Player_Headless.gd" type="Script" id=1]
+[ext_resource path="res://sounds/placehold_sounds/Step2.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/placehold_sounds/Step1.wav" type="AudioStream" id=6]
+[ext_resource path="res://sounds/placehold_sounds/damage.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/placehold_sounds/Jump.wav" type="AudioStream" id=9]
+[ext_resource path="res://Chars/Player/player_body_sheet.png" type="Texture" id=10]
+[ext_resource path="res://sounds/placehold_sounds/Walk.wav" type="AudioStream" id=11]
+[ext_resource path="res://sounds/placehold_sounds/Bullet.wav" type="AudioStream" id=12]
+[ext_resource path="res://sounds/placehold_sounds/No_energy.wav" type="AudioStream" id=13]
+[ext_resource path="res://sounds/placehold_sounds/Death.wav" type="AudioStream" id=14]
+[ext_resource path="res://World/Dialogues/P_Baloon_base-Sheet.png" type="Texture" id=15]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 13.2281
+
+[sub_resource type="Animation" id=2]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 30, 31, 32, 33, 34 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 0 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("audio_controller/step1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("audio_controller/step1:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("audio_controller/step2:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("audio_controller/walk:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("sprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Interface/Robot Crush.otf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 14
+extra_spacing_top = -6
+font_data = SubResource( 5 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "start"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("balloon/text:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("balloon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("balloon:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 8 ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+script = ExtResource( 1 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0.667419, -1.66856 )
+shape = SubResource( 1 )
+
+[node name="sprite" type="Sprite" parent="."]
+position = Vector2( 3, -21.181 )
+texture = ExtResource( 10 )
+hframes = 35
+
+[node name="player_cam" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/idle = SubResource( 2 )
+anims/jump = SubResource( 3 )
+anims/walk = SubResource( 4 )
+
+[node name="audio_controller" type="Node" parent="."]
+
+[node name="step1" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 6 )
+bus = "fx"
+
+[node name="step2" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 4 )
+bus = "fx"
+
+[node name="walk" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 11 )
+bus = "fx"
+
+[node name="jump" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 9 )
+bus = "fx"
+
+[node name="bullet" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 12 )
+bus = "fx"
+
+[node name="no_energy" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 13 )
+bus = "fx"
+
+[node name="damage" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 8 )
+bus = "fx"
+
+[node name="death" type="AudioStreamPlayer" parent="audio_controller"]
+stream = ExtResource( 14 )
+bus = "fx"
+
+[node name="balloon" type="Sprite" parent="."]
+position = Vector2( -29.2601, -103.354 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 15 )
+hframes = 9
+frame = 8
+
+[node name="text" type="Label" parent="balloon"]
+anchor_left = 0.174
+anchor_top = 0.17
+anchor_right = 0.873
+anchor_bottom = 0.8
+margin_left = -49.704
+margin_top = -47.32
+margin_right = -48.808
+margin_bottom = -48.8
+custom_fonts/font = SubResource( 6 )
+text = "now i can move better and jump"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim_balloon" type="AnimationPlayer" parent="."]
+anims/start = SubResource( 7 )
