@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/Enemys/Toaster_bullet_1.png" type="Texture" id=1]
+[ext_resource path="res://World/Enemys/bullet_toaster_1.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.41402
+height = 52.047
+
+[node name="bullet_toaster_1" type="Area2D"]
+rotation = 1.5708
+collision_layer = 64
+collision_mask = 32
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 1 )
+flip_v = true
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( -1.89203, -0.630662 )
+shape = SubResource( 1 )
+
+[node name="free" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+[connection signal="body_exited" from="." to="." method="_on_bullet_toaster_1_body_exited"]
+[connection signal="timeout" from="free" to="." method="_on_free_timeout"]

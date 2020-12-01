@@ -1,0 +1,419 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://World/Enemys/Boss/B_Enemy_Saw.gd" type="Script" id=1]
+[ext_resource path="res://sounds/placehold_sounds/saw_walk.wav" type="AudioStream" id=2]
+[ext_resource path="res://World/Enemys/Saw_Car_Sheet2.png" type="Texture" id=3]
+[ext_resource path="res://World/Light/light_saw.png" type="Texture" id=4]
+[ext_resource path="res://sounds/placehold_sounds/Saw_attack.wav" type="AudioStream" id=5]
+[ext_resource path="res://World/Enemys/Fx_car-walk.png" type="Texture" id=6]
+[ext_resource path="res://World/Enemys/Saw_Car_Sheet3.png" type="Texture" id=7]
+[ext_resource path="res://World/Enemys/Saw_Car_Sheet.png" type="Texture" id=8]
+[ext_resource path="res://World/Enemys/Fx_car-attack.png" type="Texture" id=9]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 30.1596
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 5.70853 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 10.9947 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 28.5878
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 23.4612, 20.2851 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "attack"
+length = 1.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("orientation/back:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("orientation/saw:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.3, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("orientation/front:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("orientation/saw/saw_fx:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("orientation/saw:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.6, 0.7, 0.8, 1.05, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -20.3832, 0 ), Vector2( -69.0053, 0 ), Vector2( -163.066, 0 ), Vector2( -163.066, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("orientation/saw/saw_fx:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("orientation/front/detect_player/shape:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("orientation/front:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("orientation/fx:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("saw:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1.45 ),
+"transitions": PoolRealArray( 6.49802, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "die"
+
+[sub_resource type="Animation" id=8]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("orientation/back:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("orientation/saw:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("orientation/front:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("orientation/front/detect_player:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("orientation/fx:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("orientation/front/detect_player/shape:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.6
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("orientation/front/detect_player:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("orientation/back:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 0, 1, 0, 1, 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("orientation/saw:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 0, 1, 0, 1, 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("orientation/front:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 0, 1, 0, 1, 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("orientation/fx:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("orientation/fx:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.3, 0.35, 0.4, 0.45, 0.5, 0.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("walk:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.15 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="Enemy_Saw" type="KinematicBody2D"]
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 4
+script = ExtResource( 1 )
+
+[node name="orientation" type="Node2D" parent="."]
+
+[node name="back" type="Sprite" parent="orientation"]
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="saw" type="Sprite" parent="orientation"]
+texture = ExtResource( 3 )
+hframes = 2
+
+[node name="hit_box" type="Area2D" parent="orientation/saw"]
+collision_layer = 64
+collision_mask = 32
+
+[node name="shape" type="CollisionShape2D" parent="orientation/saw/hit_box"]
+position = Vector2( 2.20486, -2.20486 )
+shape = SubResource( 1 )
+
+[node name="saw_fx" type="Sprite" parent="orientation/saw"]
+visible = false
+texture = ExtResource( 9 )
+hframes = 6
+frame = 4
+
+[node name="front" type="Sprite" parent="orientation"]
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="detect_player" type="Area2D" parent="orientation/front"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="lantern" type="Light2D" parent="orientation/front/detect_player"]
+position = Vector2( 4.27289, -0.441132 )
+texture = ExtResource( 4 )
+color = Color( 1, 0.819608, 0, 1 )
+shadow_enabled = true
+shadow_filter = 1
+
+[node name="shape" type="CollisionPolygon2D" parent="orientation/front/detect_player"]
+polygon = PoolVector2Array( 3.29138, -4.64078, -189.561, -38.1719, -190.353, 30.8021, 3, 4.66667 )
+
+[node name="detect_floor" type="Area2D" parent="orientation/front"]
+collision_layer = 0
+
+[node name="shape" type="CollisionShape2D" parent="orientation/front/detect_floor"]
+position = Vector2( -32.7682, 19.7294 )
+shape = SubResource( 2 )
+
+[node name="detect_wall" type="Area2D" parent="orientation/front"]
+collision_layer = 0
+
+[node name="shape" type="CollisionShape2D" parent="orientation/front/detect_wall"]
+position = Vector2( -40.7687, 0.104418 )
+shape = SubResource( 3 )
+
+[node name="fx" type="Sprite" parent="orientation"]
+visible = false
+position = Vector2( 48.9447, 23.2238 )
+texture = ExtResource( 6 )
+hframes = 6
+frame = 5
+
+[node name="hurtbox" type="Area2D" parent="orientation"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="shape" type="CollisionShape2D" parent="orientation/hurtbox"]
+shape = SubResource( 4 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( 1.41741, 4.51764 )
+shape = SubResource( 5 )
+
+[node name="patrol" type="Timer" parent="."]
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/attack = SubResource( 6 )
+anims/die = SubResource( 7 )
+anims/idle = SubResource( 8 )
+anims/walk = SubResource( 9 )
+
+[node name="walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "fx"
+
+[node name="saw" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "fx"
+[connection signal="body_entered" from="orientation/front/detect_player" to="." method="_on_detect_player_body_entered"]
+[connection signal="body_exited" from="orientation/front/detect_player" to="." method="_on_detect_player_body_exited"]
+[connection signal="body_exited" from="orientation/front/detect_floor" to="." method="_on_detect_floor_body_exited"]
+[connection signal="body_entered" from="orientation/front/detect_wall" to="." method="_on_detect_wall_body_entered"]
+[connection signal="area_entered" from="orientation/hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="timeout" from="patrol" to="." method="_on_patrol_timeout"]

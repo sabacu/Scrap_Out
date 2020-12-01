@@ -1,0 +1,382 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://World/Enemys/mosquito_fx.png" type="Texture" id=1]
+[ext_resource path="res://World/Enemys/Mosquito_sheet.png" type="Texture" id=2]
+[ext_resource path="res://World/Enemys/EnemyMosquito.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 387.83
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 28.5878
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 15.8407
+
+[sub_resource type="Animation" id=4]
+resource_name = "die"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("orientation/base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("orientation/base/detect_player:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("orientation/base/hit_box:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("orientation/base/hurtbox:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 2.4
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("orientation/base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1.2, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("orientation/fx:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 1, 1.2, 2.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("orientation/fx:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.25, 0.6, 1.45, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("shape:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4.5, -37.374 ), Vector2( 4.5, 26.626 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("orientation:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.6, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -36 ), Vector2( 0, 28 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("orientation/base/hit_box:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -55.5376, -10.372 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("orientation/base/hit_box:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 2.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("orientation/base:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 2, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("shape:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("shape:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -15.874 ), Vector2( 4.5, -1.37402 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("orientation/fx:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("orientation/fx:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 23.6134 ), Vector2( 50, -7.8866 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("orientation/fx:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("orientation/fx:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("orientation/fx_attack:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -21.5, 0.613403 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("orientation/fx_attack:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("orientation/fx_attack:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 4, 5, 6, 7 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("orientation/base/hit_box:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -47.6804, 23.3019 ), Vector2( -64.2367, 48.2766 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("orientation/base/hit_box:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -21.1186, -21.1186 ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 33.3398, 10 )
+
+[node name="EnemyMosquito" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="orientation" type="Node2D" parent="."]
+position = Vector2( 0, -4 )
+
+[node name="base" type="Sprite" parent="orientation"]
+scale = Vector2( 0.8, 0.8 )
+z_index = 1
+texture = ExtResource( 2 )
+hframes = 10
+
+[node name="detect_player" type="Area2D" parent="orientation/base"]
+position = Vector2( 0, 4 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="orientation/base/detect_player"]
+scale = Vector2( 1.5, 1.5 )
+shape = SubResource( 1 )
+
+[node name="hit_box" type="Area2D" parent="orientation/base"]
+position = Vector2( -55.5376, -10.372 )
+collision_layer = 64
+collision_mask = 128
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="orientation/base/hit_box"]
+polygon = PoolVector2Array( 6.0939, -15.9367, 37.2418, -36.7019, 45.7366, -20.1841, 35.8259, -4.13825 )
+
+[node name="hurtbox" type="Area2D" parent="orientation/base"]
+position = Vector2( 0, 7.14454 )
+collision_layer = 0
+collision_mask = 16
+
+[node name="shape" type="CollisionShape2D" parent="orientation/base/hurtbox"]
+shape = SubResource( 2 )
+
+[node name="fx" type="Sprite" parent="orientation"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.45098 )
+position = Vector2( 0, 23.6134 )
+texture = ExtResource( 1 )
+hframes = 10
+frame = 1
+
+[node name="fx_attack" type="Sprite" parent="orientation"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.45098 )
+position = Vector2( -21.5, 0.613403 )
+texture = ExtResource( 1 )
+hframes = 10
+frame = 2
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( 4.5, -5.374 )
+shape = SubResource( 3 )
+
+[node name="patrol" type="Timer" parent="."]
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/die = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/patrol = SubResource( 6 )
+
+[node name="dead_shape" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="dead_shape" type="CollisionShape2D" parent="dead_shape"]
+position = Vector2( 0, 10.1083 )
+shape = SubResource( 7 )
+[connection signal="body_entered" from="orientation/base/detect_player" to="." method="_on_detect_player_body_entered"]
+[connection signal="body_exited" from="orientation/base/detect_player" to="." method="_on_detect_player_body_exited"]
+[connection signal="area_entered" from="orientation/base/hurtbox" to="." method="_on_hurtbox_area_entered"]

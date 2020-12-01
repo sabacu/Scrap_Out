@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://World/Enemys/Boss/Boss_Ball2.gd" type="Script" id=1]
+[ext_resource path="res://World/Enemys/toaster_sheet.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 48.9644
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 64.9975
+
+[node name="Boss_Ball" type="RigidBody2D"]
+collision_layer = 4
+script = ExtResource( 1 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( -1.92862, 2 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 10
+
+[node name="Hit_Box" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 32
+
+[node name="shape" type="CollisionShape2D" parent="Hit_Box"]
+shape = SubResource( 2 )
+
+[node name="Spawn_box" type="Area2D" parent="."]
+input_pickable = false
+collision_layer = 4
+collision_mask = 256
+
+[node name="shape" type="CollisionShape2D" parent="Spawn_box"]
+shape = SubResource( 2 )
+[connection signal="area_entered" from="Spawn_box" to="." method="_on_Spawn_box_area_entered"]
